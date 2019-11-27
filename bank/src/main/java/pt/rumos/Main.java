@@ -3,17 +3,23 @@ package pt.rumos;
 
 public class Main
 {
-    public static void main( String[] args ){
+    public static void main(String[] args) {
 
-        Account acc1 = new Account(500, "jorge", 1 );
-        Account acc2 = new Account(1000, "arthur", 2);
+        Account bank1 = new Account();
+        Account bank2 = new Account();
 
-        System.out.println("Jorge balance before: " + acc1.getBalance());
-        System.out.println("Arthur balance before: " + acc2.getBalance());
+        bank1.setBalance();
+        bank2.setBalance();
 
-        acc1.withdraw(100);
+        double x = 100.00;
+        System.out.println("Acc 1 previous balance: " + bank1.getBalance());
+        System.out.println("Acc 2 previous balance: " + bank2.getBalance());
+        bank1.transferTo(bank2, x);
 
-        System.out.println(acc1.getBalance());
+
+        System.out.println("Acc 1 new balance: " + bank1.getBalance());
+        System.out.println("Acc 2 new balance: " + bank2.getBalance());
+
 
     }
 }
